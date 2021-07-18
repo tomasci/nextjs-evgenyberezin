@@ -1,0 +1,744 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "icons";
+@import "sizes";
+@import "oiii";
+
+@mixin bp-min($width) {
+  @media screen and (min-width: $width) {
+    @content
+  }
+}
+
+@mixin bp-max($width) {
+  @media screen and (max-width: $width) {
+    @content
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(10,7,13);
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: -5;
+
+  background: rgb(10,7,13);
+
+  .noise {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -4;
+  }
+
+  .moon {
+    position: absolute;
+    z-index: -2;
+    content: "";
+    background-image: url("assets/moon.jpg");
+    width: 1920px;
+    height: 1930px;
+    left: -390px; // - 390
+    top: -240px; // -190
+    mix-blend-mode: screen;
+    transform: rotate(29.96deg) scale(0.575);
+
+    transition: all .3s;
+
+    &-left {
+      transform: rotate(26.69deg) scale(0.631);
+      top: 20px; //104
+      left: -990px;
+    }
+
+    &-out {
+      transform: rotate(26.69deg) scale(1.18);
+      top: 1000px;
+      left: -1590px;
+    }
+
+    // iPhone 5/SE
+    @include bp-max(320px) {
+      left: -490px;
+
+      &-left {
+        left: -990px;
+        top: -20px
+      }
+
+      &-out {
+        left: -1590px;
+        top: 1000px;
+      }
+    }
+
+    @include bp-min(495px) {
+      left: -150px;
+      top: 230px;
+      transform: rotate(29.96deg) scale(0.725);
+
+      &-left {
+        transform: rotate(26.69deg) scale(0.785);
+        left: -600px;
+        top: 350px;
+        //top: 170px;
+      }
+
+      &-out {
+        left: -1590px;
+        top: 1000px;
+        transform: rotate(26.69deg) scale(1.18);
+      }
+    }
+  }
+
+  .earth {
+    position: absolute;
+    z-index: -2;
+    content: "";
+    background-image: url("assets/earth.png");
+    width: 234px;
+    height: 226px;
+    left: 230px;
+    top: 160px;
+    mix-blend-mode: screen;
+    transform: scale(0.5);
+
+    transition: all .3s;
+
+    &-left {
+      transform: scale(0.568);
+      top: 180px;
+      left: 120px;
+    }
+
+    &-out {
+      transform: scale(4.96);
+      top: 1000px;
+      left: -450px;
+    }
+
+    // iPhone 5/SE
+    @include bp-max(320px) {
+      left: 160px;
+
+      &-left {
+        left: 120px;
+      }
+
+      &-out {
+        left: -450px;
+      }
+    }
+
+    @include bp-min(495px) {
+      left: 610px;
+      top: 460px;
+      transform: scale(0.623);
+
+      &-left {
+        //left: 470px;
+        //top: 500px;
+        left: 400px;
+        top: 530px;
+      }
+
+      &-out {
+        left: -500px;
+        top: 1000px;
+        transform: scale(4.96);
+      }
+    }
+  }
+
+  .milkyWay {
+    position: absolute;
+    z-index: -2;
+    content: "";
+    width: 1024px;
+    height: 1024px;
+    transition: all .3s;
+    background-image: url("assets/milka4.webp");
+    transform: scale(0.5);
+    top: -1000px;
+    left: -270px;
+    mix-blend-mode: screen;
+
+
+    &-top {
+      top: -270px;
+      mix-blend-mode: screen;
+    }
+
+    //@include bp-min(500px) {
+    //  display: none;
+    //}
+
+    @include bp-min(495px) {
+      //display: none;
+      width: 2738px;
+      background-image: url("assets/milka4full6.webp");
+      //top: -1000px;
+      //left: -400px;
+      left: 50%;
+      transform: scale(0.5) translate(-100%, 0%);
+      filter: brightness(1.25) contrast(1.25);
+      //transform: scale(1);
+    }
+  }
+
+  .bg {
+    position: absolute;
+    inset: 0;
+    content: "";
+    z-index: -5;
+    width: 100%;
+    height: 100%;
+
+    &-type {
+      &-index {
+        transition: 1s; // 0.25
+        opacity: 0;
+        visibility: hidden;
+        background: rgba(64,103,197, .5);
+
+        &-show {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &-default {
+        transition: 1s; //.25
+        opacity: 0;
+        visibility: hidden;
+
+        background: rgb(10,7,13);
+
+        &-show {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+@mixin buttonColor($name, $r, $g, $b, $a, $aLink) {
+  &-#{$name} {
+    border: 5px solid rgba($r, $g, $b, $a);
+    box-shadow: 0 0 0 0 rgba($r, $g, $b, $a);
+
+    border-radius: 15px;
+    animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+
+    a {
+      background: rgba($r, $g, $b, $aLink);
+    }
+
+    @keyframes pulse {
+      to {
+        box-shadow: 0 0 0 16px rgba($r, $g, $b, 0);
+      }
+    }
+  }
+}
+
+.page {
+  @include bp-min(495px) {
+    width: 495px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    //height: calc(100vh - 128px);
+    height: 100vh;
+  }
+
+  .logotype {
+    background-image: url("assets/ltype5.svg");
+    width: 2503px;
+    height: 179px;
+
+
+    //margin-left: 32px;
+    //margin-top: 32px;
+
+    position: absolute;
+    top: 32px;
+    left: 32px;
+
+    // iPhone 5/SE
+    @include bp-max(320px) {
+      margin-left: 8px;
+    }
+
+    @include bp-min(495px) {
+      top: 128px;
+      background-image: url("assets/logotypeClear.svg");
+      //width:
+      //margin-top: 128px;
+      //padding-top: 128px;
+    }
+  }
+
+  .button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 32px;
+
+    // iPhone 5/SE
+    @include bp-max(320px) {
+      margin: 32px 16px;
+    }
+
+    &-fixed {
+      position: absolute;
+      bottom: 42px;
+      left: 32px;
+      margin: 0;
+
+      // iPhone 5/SE
+      @include bp-max(320px) {
+        left: 16px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      padding: 12px;
+      background: #000;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    @include buttonColor('blue', 64, 103, 197, 0.25, 0.65);
+    @include buttonColor('black', 0, 0, 0, 0.25, 0.65);
+    @include buttonColor('white', 255, 255, 255, 0.15, 0.25);
+  }
+
+  .nav {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+
+    margin-left: 32px;
+    //margin-top: 128px;
+    padding-top: 128px;
+
+
+    // iPhone 5/SE
+    @include bp-max(320px) {
+      margin-left: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 15px;
+      transition: .25s;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        color: rgba(#fff, .35);
+      }
+
+      // iPhone 5/SE
+      @include bp-max(320px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .content {
+    //padding: 128px 32px 0 32px;
+    //width: calc(100% - 64px);
+    //margin-left: auto;
+    //margin-right: auto;
+    //
+    //@include bp-max(320px) {
+    //  padding: 128px 16px 0 16px;
+    //  width: calc(100% - 32px);
+    //}
+    width: calc(100% - 64px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 128px;
+
+    // iPhone 5/SE
+    @include bp-max(320px) {
+      width: calc(100% - 32px);
+    }
+
+    h1 {
+      color: white;
+      margin: 0;
+      padding: 0;
+      font-weight: 900;
+      font-size: 32px;
+    }
+
+
+    .contact {
+      display: flex;
+      flex-flow: row;
+      padding: 8px 0; // fix for border bottom of link
+
+      .info {
+        color: white;
+        margin-top: 8px;
+
+        .title {
+          font-size: 18px;
+          line-height: 22px;
+          font-weight: 400;
+        }
+
+        .link {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 4px;
+          }
+        }
+      }
+    }
+
+    &-about {
+      .profile {
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        margin-top: 32px;
+
+        .photo {
+          width: 100px;
+          height: 100px;
+          cursor: pointer;
+
+          img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+          }
+        }
+
+        .basicInfo {
+          font-size: 18px;
+          color: white;
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+          margin-left: 16px;
+          padding: 8px 0;
+
+          .name {
+            font-weight: 700;
+          }
+
+          .age {
+            p {
+              margin: 0;
+              padding: 0;
+
+              &:first-child {
+                margin-bottom: 4px;
+              }
+            }
+          }
+        }
+      }
+
+      .description {
+        width: 100%;
+
+        margin-top: 32px;
+
+        p {
+          color: white;
+          font-size: 18px;
+          line-height: 22px;
+          font-weight: 500;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    &-skills {
+      .skillList {
+        margin-top: 32px;
+        display: flex;
+        flex-flow: row wrap;
+        flex-basis: fit-content;
+
+        .tag {
+          border: 3px solid rgba(64, 103, 197, 0.25);
+          border-radius: 15px;
+          margin-bottom: 4px;
+          margin-right: 4px;
+
+          span {
+            display: block;
+            background: rgba(64, 103, 197, 0.65);
+            padding: 8px;
+            font-size: 14px;
+            line-height: 15px;
+            font-weight: 400;
+            color: white;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      .experience {
+        color: #fff;
+        margin-top: 32px;
+
+        .intro {
+          margin-bottom: 32px;
+
+          p {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0;
+            padding: 0;
+            line-height: 22px;
+          }
+        }
+
+        .work {
+          p {
+            margin: 8px 0;
+            padding: 0;
+            font-size: 14px;
+            line-height: 17px;
+          }
+        }
+
+        .degree {
+          margin-bottom: 32px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            padding: 0;
+            line-height: 22px;
+          }
+
+          p {
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            line-height: 17px;
+          }
+        }
+      }
+    }
+
+    &-music {
+      .soundcloud {
+        margin-top: 32px;
+
+        iframe {
+          margin-bottom: 32px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        p {
+          font-size: 14px;
+          font-weight: 500;
+          color: #fff;
+          line-height: 17px;
+          margin: 0 0 16px 0;
+          padding: 0;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            text-decoration: none;
+            color: #fff;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 2px;
+          }
+        }
+      }
+    }
+
+    &-photos {
+      //width: 100%;
+
+      .instagram {
+        //width: calc(100% - 64px);
+        //margin-left: auto;
+        //margin-right: auto;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-top: 32px;
+
+        //// iPhone 5/SE
+        //@include bp-max(320px) {
+        //  //width: calc(100% - 32px);
+        //  //padding: 0 16px;
+        //}
+
+        .photo {
+          width: calc((100vw - 64px) / 3 - (16px / 3)); // 100vw - all width, 64px - LR padding, 3 - columns, 16px/3 because only 2 margins between 3 columns
+          height: calc((100vw - 64px) / 3 - (16px / 3));
+          margin-bottom: 8px;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+            height: calc((100vw - 64px) / 3 - (16px / 3));
+            object-fit: cover;
+          }
+
+          // iPhone 5/SE
+          @include bp-max(320px) {
+            width: calc((100vw - 32px) / 3 - (16px / 3));
+            height: calc((100vw - 32px) / 3 - (16px / 3));
+
+            img {
+              height: calc((100vw - 32px) / 3 - (16px / 3));
+            }
+          }
+
+          @include bp-min(495px) {
+            width: calc((495px - 64px) / 3 - (16px / 3));
+            height: calc((495px - 64px) / 3 - (16px / 3));
+
+            img {
+              height: calc((495px - 64px) / 3 - (16px / 3));
+            }
+          }
+        }
+      }
+    }
+
+    &-code {
+      .projectList {
+        margin-top: 32px;
+        //width: 100%;
+
+        .item {
+          color: #fff;
+          margin: 0 0 32px 0;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .photo {
+            width: 100%;
+            cursor: pointer;
+
+            img {
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+            }
+          }
+
+          .about {
+            padding: 8px;
+
+            h2 {
+              font-size: 18px;
+              line-height: 22px;
+              font-weight: 700;
+              margin: 0;
+              padding: 0;
+            }
+
+            p {
+              margin: 8px 0;
+              padding: 0;
+              font-size: 14px;
+              line-height: 17px;
+            }
+
+            .links {
+              display: flex;
+              flex-flow: row wrap;
+
+              a {
+                text-decoration: none;
+                color: #fff;
+                border-bottom: 1px solid #fff;
+                font-size: 14px;
+                line-height: 17px;
+                margin-right: 8px;
+
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pageFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

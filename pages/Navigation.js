@@ -1,17 +1,18 @@
-import Head from 'next/head'
-import Button from "../src/components/Button";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {toggleBackground} from "../src/store/slices/BackgroundSlice";
+import Nav from "../src/components/Navigation/Nav";
+import Button from "../src/components/Button";
+import Head from "next/head";
 
-export default function Home() {
+function Navigation() {
     const dispatch = useDispatch()
     const pageShow = true
 
     useEffect(() => {
         dispatch(
             toggleBackground({
-                value: 1000
+                value: 1001
             })
         )
     }, [dispatch])
@@ -19,7 +20,7 @@ export default function Home() {
     return (
         <>
             <Head>
-              <title>Evgeny Berezin</title>
+                <title>Evgeny Berezin</title>
             </Head>
 
             <div className="page" style={
@@ -29,9 +30,11 @@ export default function Home() {
                     animation: 'pageFadeOut .1s ease-out'
                 })
             }>
-                <div className="logotype"/>
-                <Button to={"/Navigation"} title={"start"} isBlue={true}/>
+                <Nav/>
+                <Button to={"/"} title={"go back"} isBlack={true}/>
             </div>
         </>
-  )
+    )
 }
+
+export default Navigation

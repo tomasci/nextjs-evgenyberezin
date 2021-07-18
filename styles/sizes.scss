@@ -1,0 +1,15 @@
+$sizes: 2, 4, 8, 12, 16, 24, 28, 32;
+
+@mixin margin() {
+  @each $size in $sizes {
+    .mt-#{$size} {
+      margin-top: $size + px !important;
+    }
+
+    .mb-#{$size} {
+      margin-bottom: $size + px !important;
+    }
+  }
+}
+
+@include margin;
