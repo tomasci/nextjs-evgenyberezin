@@ -21,10 +21,10 @@ function Experience() {
 
             <div className="work">
                 <p>
-                    I never worked (except some freelance), but my experience with web like 5 years, and of course I was not learning all this time, but I had much practice.
+                    My experience with web like 5 years, and of course I was not learning all this time, but I had much practice.
                 </p>
                 <p>
-                    That mean that I saw many things, and maybe I don’t know something it’s not stop me when I developing this website and some other demos here.
+                    That mean that I saw many things, and maybe I don’t know something it’s not stopping me when I developing this website and some other demos here.
                 </p>
                 <p>
                     So, I think I know many things, but also as anyone I don’t know many-many other things and I continue learning all of this stuff.

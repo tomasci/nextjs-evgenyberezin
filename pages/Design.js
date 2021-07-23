@@ -47,6 +47,17 @@ function DesignPage() {
                         />
 
                         <ProjectItem
+                            image={'/uploads/dribbble/hyperpopplayer.jpg'}
+                            title={'HyperPop – audio player'}
+                            about={[
+                                'Specific audio player for unique hyperpop listeners ha-ha'
+                            ]}
+                            linkList={[
+                                {title: 'Dribbble.com', href: 'https://dribbble.com/shots/16100975-Hyper-Pop-audio-player'}
+                            ]}
+                        />
+
+                        <ProjectItem
                             image={'/uploads/dribbble/subtitles.jpg'}
                             title={'Subtitles editor and translator'}
                             about={[
