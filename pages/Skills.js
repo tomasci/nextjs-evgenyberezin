@@ -30,7 +30,7 @@ function SkillsPage() {
                     <Skills skills={[
                         'React',
                         'Next.js',
-                        'Javascript',
+                        'JavaScript',
                         'TypeScript',
                         'CSS',
                         'Sass',

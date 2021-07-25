@@ -41,7 +41,7 @@ function CodePage() {
                             about={[
                                 'I developed and designed my personal website, and you see how it works right now :)',
                                 'But source code is not available. So, only "how it works" experience.',
-                                'Inside: JavaScript, Next.js, SCSS, Redux and Oiii! JS'
+                                'Inside: JavaScript, Next.js, SCSS and Oiii! JS'
                             ]}
                             linkList={[
                                 {title: 'evgenyberezin.com', href: 'https://evgenyberezin.com'}
@@ -66,9 +66,9 @@ function CodePage() {
                             image={'/uploads/site/kcalorizer.jpg'}
                             title={'kcalorizer – calorie calculator'}
                             about={[
+                                'Warning: first load may take a while, because app hosted in USA. Also please use PC and not mobile.',
                                 'This is my React code demo – Kcal calculator.',
-                                'Design is not so good so it is not adapted as well for mobile phones and small PC screens, of course I tried, but it is all ruined from start, so I think it is easier to build "all new" app. But. It mostly my coding ability demonstration so don’t worry about design, my fault. Also used Strapi as backend/API, where products and images, and all the information stored, and from where all you can see is getted. Source code is fully available at GitHub.',
-                                'Hosted in USA, sorry if first load is not as fast as your expectation.',
+                                'It mostly my coding ability demonstration so don’t worry about design, my fault. Also used Strapi as backend/API, where products, images, and all the information stored. Source code is fully available at GitHub.',
                                 'Inside: JavaScript, React, Redux, SCSS and Strapi (backend, database)'
                             ]}
                             linkList={[

@@ -261,6 +261,10 @@ body {
   }
 }
 
+//.wrapper {
+//  overflow-x: hidden;
+//}
+
 .page {
   @include bp-min(495px) {
     width: 495px;
@@ -273,7 +277,8 @@ body {
 
   .logotype {
     background-image: url("assets/ltype5.svg");
-    width: 2503px;
+    //width: 2503px;
+    width: calc(100vw - 32px);
     height: 179px;
 
 
@@ -283,6 +288,7 @@ body {
     position: absolute;
     top: 32px;
     left: 32px;
+    //overflow-x: hidden;
 
     // iPhone 5/SE
     @include bp-max(320px) {
@@ -524,28 +530,19 @@ body {
         color: #fff;
         margin-top: 32px;
 
-        .intro {
-          margin-bottom: 32px;
+        //.intro {
+        //  margin-bottom: 32px;
+        //
+        //  p {
+        //    font-size: 18px;
+        //    font-weight: 500;
+        //    margin: 0;
+        //    padding: 0;
+        //    line-height: 22px;
+        //  }
+        //}
 
-          p {
-            font-size: 18px;
-            font-weight: 500;
-            margin: 0;
-            padding: 0;
-            line-height: 22px;
-          }
-        }
-
-        .work {
-          p {
-            margin: 8px 0;
-            padding: 0;
-            font-size: 14px;
-            line-height: 17px;
-          }
-        }
-
-        .degree {
+        &-item {
           margin-bottom: 32px;
 
           &:last-child {
@@ -562,11 +559,43 @@ body {
 
           p {
             font-size: 14px;
-            margin: 0;
+            margin: 8px 0;
             padding: 0;
             line-height: 17px;
           }
         }
+
+        .work {
+          p {
+            margin: 8px 0;
+            padding: 0;
+            font-size: 14px;
+            line-height: 17px;
+          }
+        }
+
+        //.degree {
+        //  margin-bottom: 32px;
+        //
+        //  &:last-child {
+        //    margin-bottom: 0;
+        //  }
+        //
+        //  h2 {
+        //    font-size: 18px;
+        //    font-weight: 700;
+        //    margin: 0 0 4px 0;
+        //    padding: 0;
+        //    line-height: 22px;
+        //  }
+        //
+        //  p {
+        //    font-size: 14px;
+        //    margin: 0;
+        //    padding: 0;
+        //    line-height: 17px;
+        //  }
+        //}
       }
     }
 

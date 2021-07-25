@@ -37,7 +37,10 @@ function AboutPage() {
                     <Heading1 title={"About"}/>
                     <Profile/>
                     <Description>
-                        I like to ride a bike, listen music, take bad photos lol and also interested in space. I write my own music, but just a beginner.
+                        JavaScript & React.js developer
+                    </Description>
+                    <Description>
+                        Also I like to ride a bike, listen music, take bad photos and a little interested in space. I write my own music, but just a beginner
                     </Description>
                     <Contact icon={'mail'} title={'email:'} link={'mailto:whytomasci@gmail.com'} linkTitle={'whytomasci@gmail.com'} mt={16}/>
                     <Contact icon={'telegram'} title={'telegram:'} link={'https://t.me/tomasci'} linkTitle={'t.me/tomasci'} mt={16}/>
