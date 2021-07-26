@@ -14,7 +14,7 @@ export function generateNoise() {
 
     for (let x = 0; x < canvas.width; x++) {
         for (let y = 0; y < canvas.height; y++) {
-            let opacity = (Math.random() * (0.255 - 0.025) + 0.025).toFixed(4) // getting number between 0.01 & 0.075 (0025 - 0195)
+            let opacity = (Math.random() * (0.255 - 0.025) + 0.025).toFixed(4) // getting number between 0.01 & 0.075 (0025 - 0195) // 0.255 - 0.025
             ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`
 
             let rand = Math.random()

@@ -16,6 +16,13 @@ function MyApp({ Component, pageProps }) {
                 <meta name="description" content="Evgeny Berezin – Javascript and React developer and web designer"/>
                 <link rel="apple-touch-icon" href="/logo192.png"/>
                 <link rel="manifest" href="/manifest.json"/>
+                <link rel="preload" as="image" href={'/assets/earth.png'}/>
+                <link rel="preload" as="image" href={'/assets/moon.jpg'}/>
+                <link rel="preload" as="image" href={'/assets/avatarSmall.jpg'}/>
+                <link rel="preload" as="image" href={'/assets/logotypeClear.svg'}/>
+                <link rel="preload" as="image" href={'/assets/ltype5.svg'}/>
+                <link rel="preload" as="image" href={'/assets/milka4.webp'}/>
+                <link rel="preload" as="image" href={'/assets/milka4full6.webp'}/>
             </Head>
 
             <Provider store={store}>

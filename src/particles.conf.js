@@ -30,6 +30,16 @@ export const particlesConfig = {
                 sync: false
             }
         },
+        // opacity: {
+        //     value: 0.5,
+        //     random: true,
+        //     anim: {
+        //         enable: true,
+        //         speed: 3,
+        //         opacity_min: 0.47,
+        //         sync: false
+        //     }
+        // },
         size: {
             value: 2,
             random: true,

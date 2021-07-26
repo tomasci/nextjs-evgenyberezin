@@ -50,7 +50,7 @@ function DesignPage() {
                             image={'/uploads/dribbble/hyperpopplayer.jpg'}
                             title={'HyperPop – audio player'}
                             about={[
-                                'Specific audio player for unique hyperpop listeners ha-ha'
+                                'Specific audio player for unique hyperpop listeners'
                             ]}
                             linkList={[
                                 {title: 'Dribbble.com', href: 'https://dribbble.com/shots/16100975-Hyper-Pop-audio-player'}
