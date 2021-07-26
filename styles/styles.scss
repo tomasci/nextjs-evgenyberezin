@@ -52,7 +52,7 @@ body {
     position: absolute;
     z-index: -2;
     content: "";
-    background-image: url("/assets/moon.jpg");
+    background-image: url("assets/moon.jpg");
     width: 1920px;
     height: 1930px;
     left: -390px; // - 390
@@ -113,7 +113,7 @@ body {
     position: absolute;
     z-index: -2;
     content: "";
-    background-image: url("/assets/earth.png");
+    background-image: url("assets/earth.png");
     width: 234px;
     height: 226px;
     left: 230px;
@@ -175,7 +175,7 @@ body {
     width: 1024px;
     height: 1024px;
     transition: all .3s;
-    background-image: url("/assets/milka4.webp");
+    background-image: url("assets/milka4.webp");
     transform: scale(0.5);
     top: -1000px;
     left: -270px;
@@ -194,7 +194,7 @@ body {
     @include bp-min(495px) {
       //display: none;
       width: 2738px;
-      background-image: url("/assets/milka4full6.webp");
+      background-image: url("assets/milka4full6.webp");
       //top: -1000px;
       //left: -400px;
       left: 50%;
@@ -278,7 +278,7 @@ body {
   }
 
   .logotype {
-    background-image: url("/assets/ltype5.svg");
+    background-image: url("assets/ltype5.svg");
     //width: 2503px;
     width: calc(100vw - 32px);
     height: 179px;
@@ -299,7 +299,7 @@ body {
 
     @include bp-min(495px) {
       top: 128px;
-      background-image: url("/assets/logotypeClear.svg");
+      background-image: url("assets/logotypeClear.svg");
       //width:
       //margin-top: 128px;
       //padding-top: 128px;
