@@ -31,7 +31,7 @@ function Experience() {
                 title={"2017-2020, Freelance"}
                 description={[
                     "I have some freelance projects when I was a student. So it is not continuous work, just something from time to time.",
-                    "Different technologies was used. At the time of the beginning it was PHP, and at the end it was Node, React, express and JavaScript at all."
+                    "Various technologies has been used. At the time of the beginning it was PHP, and at the end it was Node, React, express and JavaScript at all."
                 ]}
             />
 
