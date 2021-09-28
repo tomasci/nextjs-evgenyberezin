@@ -28,6 +28,13 @@ function MusicPage() {
                     <Heading1 title={"Music"}/>
 
                     <div className="soundcloud">
+                        <iframe
+                            src={"https://embed.music.apple.com/us/playlist/2021/pl.b160f95b1e494050a32730e37dc3d535?app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1"}
+                            height={"450px"} frameBorder={"0"}
+                            sandbox={"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"}
+                            allow={"autoplay *; encrypted-media *;"}
+                            style={{width:'100%', maxWidth:'660px', overflow:'hidden', background:'transparent'}}/>
+
                         <iframe title={"Tomasci – 2020, Apple Music"} loading={"lazy"} allow={"autoplay *; encrypted-media *; fullscreen *"} frameBorder={"0"} height={"450"}
                                 style={{width:'100%', maxWidth:'660px', overflow:'hidden', background:'transparent'}}
                                 sandbox={"allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"}
