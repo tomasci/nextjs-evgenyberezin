@@ -42,8 +42,8 @@ function AboutPage() {
                     <Description>
                         Also I like to ride a bike, listen music, take bad photos and a little interested in space. I write my own music, but just a beginner
                     </Description>
-                    <Contact icon={'mail'} title={'email:'} link={'mailto:whytomasci@gmail.com'} linkTitle={'whytomasci@gmail.com'} mt={16}/>
-                    <Contact icon={'telegram'} title={'telegram:'} link={'https://t.me/whytomasci'} linkTitle={'t.me/whytomasci'} mt={16}/>
+                    {/*<Contact icon={'mail'} title={'email:'} link={'mailto:whytomasci@gmail.com'} linkTitle={'whytomasci@gmail.com'} mt={16}/>*/}
+                    {/*<Contact icon={'telegram'} title={'telegram:'} link={'https://t.me/whytomasci'} linkTitle={'t.me/whytomasci'} mt={16}/>*/}
                 </div>
 
                 <Button to={"/Navigation"} title={"go back"} isWhite={true} isFixed={false}/>
